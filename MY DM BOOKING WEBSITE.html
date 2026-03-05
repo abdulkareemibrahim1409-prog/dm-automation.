@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DM Automation | Salon Booking Bot</title>
+  <style>
+    :root {
+      --primary-blue: #0d2a4d;
+      --accent-blue: #4361ee;
+      --light-blue: #4cc9f0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-blue), #1a4a8c);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .logo {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 { font-size: 2.8em; margin: 0; }
+    header p { font-size: 1.2em; margin: 10px 0 25px; opacity: 0.9; }
+    
+    .btn {
+      background: var(--light-blue); color: #fff;
+      padding: 14px 32px; border: none;
+      font-weight: bold; cursor: pointer;
+      border-radius: 30px; transition: 0.3s;
+      text-decoration: none; display: inline-block;
+      font-size: 1.1em;
+    }
+    .btn:hover { background: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3); }
+
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; color: var(--primary-blue); font-size: 2em; }
+
+    /* Video Section */
+    .video-container {
+      text-align: center;
+      background: #f4f7f6;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    video {
+      width: 100%;
+      max-width: 850px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    /* Pricing Section - Mobile Responsive Fix */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      border: 1px solid #eee; 
+      border-radius: 15px;
+      padding: 30px; 
+      text-align: center;
+      background: white;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Stack cards vertically on small screens */
+    @media (max-width: 768px) {
+      .pricing-grid { flex-direction: column; align-items: center; }
+      .card { width: 100%; max-width: 400px; }
+      .popular { transform: scale(1) !important; margin: 10px 0; }
+    }
+
+    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    .card h3 { color: var(--primary-blue); font-size: 1.5em; }
+    .card .price { font-size: 2em; font-weight: bold; margin: 15px 0; color: var(--accent-blue); }
+    
+    .popular { 
+      border: 3px solid var(--accent-blue) !important; 
+      transform: scale(1.05);
+      position: relative;
+    }
+    .popular-tag {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-blue);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    /* Form Styling */
+    .contact-container {
+      background: #f9fbfd;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form { display: flex; flex-direction: column; gap: 15px; }
+    input, textarea {
+      padding: 14px; border: 1px solid #ddd;
+      border-radius: 10px; font-size: 1em;
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus { border-color: var(--accent-blue); outline: none; }
+
+    /* WhatsApp Button styling */
+    .whatsapp-btn {
+      background-color: #25D366;
+      margin-top: 15px;
+    }
+    .whatsapp-btn:hover { background-color: #128C7E; }
+
+    footer {
+      background: var(--primary-blue); color: white;
+      text-align: center; padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="dm book.PNG" alt="DM Booking Logo" class="logo">
+    <h1>DM Automation</h1>
+    <p>Scaling Salons in Kaduna North with AI Booking Flows</p>
+    <a href="#contact" class="btn">Get Started Now</a>
+  </header>
+
+  <section id="demo">
+    <h2>The Future of Salon Bookings</h2>
+    <div class="video-container">
+      <video controls poster="dm book.PNG">
+        <source src="demo vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 20px; color: #555; font-style: italic;">"Our Standard Package automating a client's full booking journey."</p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Packages Built for Your Success</h2>
+    <div class="pricing-grid">
+      <div class="card">
+        <h3>Basic</h3>
+        <div class="price">$120</div>
+        <p>Greeting, Service Menu, & Simple Direct Messages.</p>
+        <a href="#contact" class="btn" style="margin-top:auto">Inquire</a>
+      </div>
+      
+      <div class="card popular">
+        <div class="popular-tag">Best Value</div>
+        <h3>Standard</h3>
+        <div class="price">$250</div>
+        <p>Full Booking Flow, Google Sheets Sync, & 24h Auto-Reminders.</p>
+        <a href="#contact" class="btn" style="margin-top:auto">Inquire</a>
+      </div>
+      
+      <div class="card">
+        <h3>Premium</h3>
+        <div class="price">$450</div>
+        <p>Payoneer Integration, Smart Upsells, & 30-Day VIP Support.</p>
+        <a href="#contact" class="btn" style="margin-top:auto">Inquire</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-container">
+      <h2>Let's Automate Your Business</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="business" placeholder="Business Name (e.g. Kaduna Cut & Style)" required>
+        <textarea id="message" rows="4" placeholder="Tell me about your business..." required></textarea>
+        
+        <button type="submit" id="submitBtn" class="btn">Send My Request</button>
+        
+        <a href="https://wa.me/2348119231292" 
+           class="btn whatsapp-btn" target="_blank">
+           Chat on WhatsApp
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 DM Automation | Kaduna North, Nigeria.</p>
+  </footer>
+
+<script>
+  const contactForm = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // 1. Visual feedback for the user
+    submitBtn.innerText = "Sending...";
+    submitBtn.style.opacity = "0.7";
+    submitBtn.disabled = true;
+
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      business: document.getElementById("business").value,
+      message: document.getElementById("message").value
+    };
+
+    // 2. Failsafe: Redirect after 2.5 seconds regardless of network response
+    const failsafe = setTimeout(() => {
+      window.location.href = "thank-you.html";
+    }, 2500);
+
+    // 3. Send data to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbyhSPOZaJ8ohTYtadPheWiMIOT8fgp-U-956jg1j_tbE3DN7Rn6666XB1BYE5e2j8W5/exec', {
+      method: 'POST',
+      mode: 'no-cors', // Essential for Google Apps Script Web Apps
+      cache: 'no-cache',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    })
+    .then(res => {
+      clearTimeout(failsafe);
+      window.location.href = "thank-you.html";
+    })
+    .catch(err => {
+      console.log("Network error, but failsafe will handle redirect.");
+    });
+  });
+</script>
+
+</body>
+</html>
